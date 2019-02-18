@@ -24,6 +24,7 @@ if(imagelink != ''){
    $("#inputimagepreview").attr('src',imagelink);
 }else{
 	$( "input[name*='previewimage']" ).focus();
+	$("#inputimagepreview").removeAttr( "src" );
 }
 });
 </script>
