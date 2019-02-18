@@ -1,5 +1,7 @@
 # goMechnicsTest
-PriceCheck.java file is for first problem 
+PriceCheck.java file is for first problem .
+2. Problem no second source file in previewimage.html,previewimage.js,previewimage.js
+3. 3rd problem code is available in testProject zip file after unzipping you can see code in TestController.php(index method)
 testProject is for 3rd problem . to run this in your machine .
 you have to install apache , laravel 5.5 and PHP
 Here i'm attaching my screenshot for response 
