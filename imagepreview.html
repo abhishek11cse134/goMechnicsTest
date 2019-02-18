@@ -2,7 +2,7 @@
       xmlns:fb="http://ogp.me/ns/fb#">
 <html>
 <head>
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src ="imagepreview.js"></script>
 	<title></title>
 </head>
@@ -10,17 +10,26 @@
 	<img id="output"/>
 	 
   Preview Image:
-  <input type="text" name="previewimage">
-  <input type="button" value="previewimage" onclick="reader(event)">
+  <input type="text" name="previewimage" />
+  <input type="button" value="previewimage" id="preview_Image">
 
-  <form >
-  Preview Image:<br>
-  <input type="text" name="Previewimage" value="PreviewImage"><br>
-  
-</form>
- 
-
+  <br>
+  <center>
+ <img id="inputimagepreview" style="padding: 35px;" />
+ </center>
+<script>
+$(document).on('click','#preview_Image',function(){
+var imagelink = $( "input[name='previewimage']" ).val();
+if(imagelink != ''){
+   $("#inputimagepreview").attr('src',imagelink);
+}else{
+	$( "input[name*='previewimage']" ).focus();
+}
+});
+</script>
 
 </body>
 </html>
+
+
 
