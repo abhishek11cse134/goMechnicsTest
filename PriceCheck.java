@@ -7,10 +7,12 @@ import java.util.List;
 public class PriceCheck {
 
     public static void main(String[] args) {
+        
         String[] origItems = { "rice", "sugar", "wheat", "cheese" };
         float[] origPrices = { 16.89F, 56.92F, 20.89F, 345.99F };
         String[] items = { "rice", "cheese" };
         float[] prices = { 15.99F, 400.79F };
+        
         List<String> originalItems = new ArrayList(Arrays.asList(origItems));
         List<Float> originalPrices = addFloatsToArray(origPrices);
         List<String> actualItems = new ArrayList(Arrays.asList(items));
@@ -29,6 +31,7 @@ public class PriceCheck {
     }
 
     private static List addFloatsToArray(float[] a) {
+        
         List<Float> l = new ArrayList<>();
         for (float f : a) {
             l.add(f);
