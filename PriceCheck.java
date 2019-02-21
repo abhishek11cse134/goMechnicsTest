@@ -3,6 +3,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * @author Deepak
+ *
+ */
 public class PriceCheck {
 
     public static void main(String[] args) {
@@ -10,16 +14,16 @@ public class PriceCheck {
         float[] origPrices = { 16.89F, 56.92F, 20.89F, 345.99F };
         String[] items = { "rice", "cheese" };
         float[] prices = { 15.99F, 400.79F };
-        List<String> actItems = new ArrayList(Arrays.asList(origItems));
+        List<String> originalItems = new ArrayList(Arrays.asList(origItems));
         List<Float> originalPrices = addFloatsToArray(origPrices);
-        List<String> actItems = new ArrayList(Arrays.asList(items));
-        List<Float> actPrices = addFloatsToArray(prices);
+        List<String> actualItems = new ArrayList(Arrays.asList(items));
+        List<Float> actualPrices = addFloatsToArray(prices);
         int count = 0;
-        for (String aItems : actItems) {
-            int oi = actItems.indexOf(aItems);
+        for (String aItems : actualItems) {
+            int oi = originalItems.indexOf(aItems);
             float op = originalPrices.get(oi);
             int aii = actualItems.indexOf(aItems);
-            if (op != actPrices.get(aii)) {
+            if (op != actualPrices.get(aii)) {
                 count++;
             }
         }
