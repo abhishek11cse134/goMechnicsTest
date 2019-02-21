@@ -3,10 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * @author Deepak
- *
- */
+
 public class PriceCheck {
 
     public static void main(String[] args) {
