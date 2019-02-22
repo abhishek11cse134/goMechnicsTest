@@ -14,29 +14,34 @@ class TestController extends Controller
      */
     public function index(Request $request)
     {
-       $title=$request->all()['title'];
-       $page=$request->all()['page'];
+       $title=$request->all()['Title'];
+       $page=1;
        
        $client = new Client();
-
        $res = $client->get('https://jsonmock.hackerrank.com/api/movies/search/?Title='.$title.'&page='.$page);
        $arr=json_decode($res->getBody()->getContents(), true);
-       //dd($arr['data']);
+       if(count($arr['data']) == '10'){
+        $page=$page+1;
+        $res = $client->get('https://jsonmock.hackerrank.com/api/movies/search/?Title='.$title.'&page='.$page);
+        $arr2=json_decode($res->getBody()->getContents(), true);
+       $finalarr['data']=array_merge($arr['data'],$arr2['data']);
+    
+       
+       }
+      
        $titleArray=[];
-       foreach ($arr['data'] as  $value) {
-        //dd($value);
+       foreach ($finalarr['data'] as  $value) {
+        
           array_push($titleArray,$value['Title']);
            
        }
-        //$sortedArray=sort($titleArray);
+        
        sort($titleArray);
        $count=count($titleArray);
        for($x = 0; $x < $count; $x++) {
         echo $titleArray[$x];
          echo "<br>";
         }
-        //dd($sortedArray);
-
     
 
     }
